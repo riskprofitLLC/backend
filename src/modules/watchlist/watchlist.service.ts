@@ -26,7 +26,7 @@ export class WatchlistService {
 	@Cron(CronExpression.EVERY_HOUR)
 	async updateWatchlist(): Promise<boolean> {
 		try {
-			await sleep(10_000)
+			await sleep(20_000)
 			const state: InstantState | null = await this.instantStatesService.getLastInstantState()
 			if (!state) return false
 			const watchlist: Watchlist[] = await this.getWatchlist()
